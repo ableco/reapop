@@ -3,6 +3,7 @@ import {DEFAULT_NOTIFICATION} from '../constants';
 
 // An array to store notifications object
 const INITIAL_STATE = [];
+
 // Action types
 const ADD_NOTIFICATION = 'ADD_NOTIFICATION';
 const UPDATE_NOTIFICATION = 'UPDATE_NOTIFICATION';
@@ -149,7 +150,7 @@ export default (defaultNotification = DEFAULT_NOTIFICATION) => {
       case REMOVE_NOTIFICATION:
         return state.filter((notification) => notification.id !== payload);
       case REMOVE_NOTIFICATIONS:
-        return [];
+        return INITIAL_STATE;
       default:
         return state;
     }
